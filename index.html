@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cory Prints LLC — Aerial photo &amp; video, Charlotte NC</title>
+<meta name="description" content="Roofing and landscaping, real estate, indoor and outdoor events. Charlotte, NC. FAA Part 107 certified.">
+<meta name="theme-color" content="#0A1018">
+<meta property="og:title" content="Cory Prints LLC">
+<meta property="og:description" content="Roofing and landscaping, real estate, indoor and outdoor events. Charlotte, NC.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira:wght@500;700;800&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- ===================================================================
+     EDIT ONLY THIS BLOCK. Everything below it can stay as-is.
+     =================================================================== -->
+<script>
+const CONFIG = {
+  instagram:     "https://instagram.com/Bit.Bridge",
+  instagramText: "@Bit.Bridge",
+
+  website:       "https://BitBridgeCLT.com",
+  websiteText:   "BitBridgeCLT.com",
+
+  payment:       "https://buy.stripe.com/8x25kx3sBgujgC60A2cQU00",
+  paymentText:   "Card, Apple Pay, Cash App",
+
+  // Used by the "Save my contact" button (creates a .vcf the phone can import)
+  fullName:  "Cory",
+  lastName:  "",
+  company:   "BBC LLC",
+  jobTitle:  "Drone Pilot — FAA Part 107",
+  phone:     "+1-980-349-9410",
+  email:     "Cory.Prints@gmail.com",
+  city:      "Charlotte",
+  state:     "NC"
+};
+</script>
+<!-- =================================================================== -->
+
+<style>
+  :root{
+    --night:#0A1018;
+    --panel:#141F30;
+    --panel-2:#1B2A40;
+    --ink:#EAF1FA;
+    --slate:#7C8FA8;
+    --amber:#FF9A3C;
+    --amber-dim:rgba(255,154,60,.13);
+    --rail:26px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+
+  html{-webkit-text-size-adjust:100%}
+
+  body{
+    background:var(--night);
+    color:var(--ink);
+    font-family:"Barlow",system-ui,-apple-system,sans-serif;
+    min-height:100svh;
+    padding:0 20px calc(28px + env(safe-area-inset-bottom)) calc(20px + var(--rail));
+    max-width:520px;
+    margin:0 auto;
+    position:relative;
+    overflow-x:hidden;
+  }
+
+  /* dusk gradient — golden hour horizon behind everything */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+      radial-gradient(120% 55% at 50% 108%, rgba(255,154,60,.16) 0%, rgba(255,154,60,0) 62%),
+      linear-gradient(180deg, #070C13 0%, #0A1018 55%, #0C1421 100%);
+    z-index:-1;
+  }
+
+  /* ---------- signature: altitude rail ---------- */
+  .rail{
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:max(0px, calc(50vw - 260px));
+    width:var(--rail);
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    padding:24px 0 calc(24px + env(safe-area-inset-bottom));
+    border-right:1px solid rgba(124,143,168,.14);
+    pointer-events:none;
+  }
+  .tick{
+    height:1px;
+    background:rgba(124,143,168,.28);
+    width:8px;
+    margin-left:auto;
+    margin-right:6px;
+    opacity:0;
+    transition:opacity .45s ease, width .45s ease, background .45s ease;
+  }
+  .tick.major{width:16px;background:rgba(124,143,168,.5)}
+  .tick.lit{opacity:1}
+  .tick.major.lit{background:var(--amber)}
+
+  .rail-label{
+    position:fixed;
+    left:max(0px, calc(50vw - 260px));
+    bottom:calc(58px + env(safe-area-inset-bottom));
+    width:var(--rail);
+    font-family:"IBM Plex Mono",monospace;
+    font-size:8.5px;
+    letter-spacing:.14em;
+    color:var(--slate);
+    writing-mode:vertical-rl;
+    text-orientation:mixed;
+    text-align:right;
+    pointer-events:none;
+  }
+
+  /* ---------- header ---------- */
+  header{padding:52px 0 0}
+
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:10.5px;
+    letter-spacing:.17em;
+    color:var(--slate);
+    text-transform:uppercase;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:26px;
+  }
+  .strobe{
+    width:6px;height:6px;border-radius:50%;
+    background:var(--amber);
+    box-shadow:0 0 10px var(--amber);
+    animation:blink 2.6s ease-in-out infinite;
+    flex:none;
+  }
+  @keyframes blink{0%,72%,100%{opacity:1}80%,92%{opacity:.15}}
+
+  h1{
+    font-family:"Saira",sans-serif;
+    font-weight:800;
+    font-size:clamp(44px,15vw,68px);
+    line-height:.87;
+    letter-spacing:-.035em;
+    text-transform:uppercase;
+  }
+  h1 .thin{font-weight:500;color:var(--slate);display:block}
+
+  .altitude{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11px;
+    letter-spacing:.1em;
+    color:var(--amber);
+    margin-top:20px;
+  }
+  .altitude .cap{color:var(--slate)}
+
+  .tagline{
+    font-size:16.5px;
+    line-height:1.5;
+    color:var(--slate);
+    margin-top:14px;
+    max-width:30ch;
+  }
+  .tagline b{color:var(--ink);font-weight:600}
+
+  /* ---------- links ---------- */
+  nav{margin-top:38px;display:flex;flex-direction:column;gap:10px}
+
+  .row{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    background:var(--panel);
+    border:1px solid rgba(124,143,168,.16);
+    border-radius:13px;
+    padding:17px 18px;
+    text-decoration:none;
+    color:var(--ink);
+    transition:transform .16s ease, border-color .16s ease, background .16s ease;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .row:active{transform:scale(.985);background:var(--panel-2)}
+  .row:hover{border-color:rgba(124,143,168,.34)}
+  .row:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+
+  .row .glyph{
+    width:34px;height:34px;flex:none;
+    display:grid;place-items:center;
+    border-radius:9px;
+    background:var(--panel-2);
+    color:var(--slate);
+  }
+  .row .glyph svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+  .row .txt{flex:1;min-width:0}
+  .row .label{
+    font-family:"Saira",sans-serif;
+    font-weight:700;
+    font-size:15.5px;
+    letter-spacing:-.005em;
+    line-height:1.25;
+  }
+  .row .sub{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11px;
+    color:var(--slate);
+    margin-top:3px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .row .chev{color:var(--slate);flex:none}
+  .row .chev svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+  .row.pay{
+    background:var(--amber-dim);
+    border-color:rgba(255,154,60,.4);
+  }
+  .row.pay .glyph{background:var(--amber);color:#0A1018}
+  .row.pay .label{color:var(--amber)}
+  .row.pay:active{background:rgba(255,154,60,.2)}
+
+  /* ---------- save contact ---------- */
+  .save{
+    margin-top:22px;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    background:transparent;
+    border:1px dashed rgba(124,143,168,.4);
+    border-radius:13px;
+    padding:16px;
+    color:var(--ink);
+    font-family:"Saira",sans-serif;
+    font-weight:600;
+    font-size:14px;
+    letter-spacing:.01em;
+    cursor:pointer;
+    transition:border-color .16s ease, color .16s ease;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .save:hover{border-color:var(--amber);color:var(--amber)}
+  .save:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+  .save svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+  footer{
+    margin-top:34px;
+    font-family:"IBM Plex Mono",monospace;
+    font-size:10px;
+    letter-spacing:.13em;
+    color:rgba(124,143,168,.55);
+    text-transform:uppercase;
+    line-height:1.9;
+  }
+
+  /* ---------- load sequence ---------- */
+  .rise{opacity:0;transform:translateY(14px)}
+  .rise.in{opacity:1;transform:none;transition:opacity .6s ease, transform .6s cubic-bezier(.2,.7,.3,1)}
+
+  @media (prefers-reduced-motion: reduce){
+    .rise,.rise.in{opacity:1;transform:none;transition:none}
+    .strobe{animation:none}
+    .tick{opacity:1;transition:none}
+    .row{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="rail" id="rail" aria-hidden="true"></div>
+<div class="rail-label" aria-hidden="true">FT AGL</div>
+
+<header>
+  <p class="eyebrow rise"><span class="strobe"></span>FAA Part 107 · Charlotte, NC</p>
+  <h1 class="rise">Cory<span class="thin">Prints</span></h1>
+  <p class="altitude rise"><span id="alt">000</span> FT <span class="cap">/ CEILING 400</span></p>
+  <p class="tagline rise"><b>Roofing &amp; landscaping. Real estate. Indoor and outdoor events.</b> Shot, edited, delivered.</p>
+</header>
+
+<nav>
+  <a class="row rise" id="lnk-ig" href="#" target="_blank" rel="noopener">
+    <span class="glyph"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></svg></span>
+    <span class="txt"><span class="label">Instagram</span><span class="sub" id="sub-ig"></span></span>
+    <span class="chev"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
+  </a>
+
+  <a class="row rise" id="lnk-web" href="#" target="_blank" rel="noopener">
+    <span class="glyph"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 3 2.6 15 0 18M12 3c-2.6 3-2.6 15 0 18"/></svg></span>
+    <span class="txt"><span class="label">Website &amp; reel</span><span class="sub" id="sub-web"></span></span>
+    <span class="chev"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
+  </a>
+
+  <a class="row pay rise" id="lnk-pay" href="#" target="_blank" rel="noopener">
+    <span class="glyph"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19"/></svg></span>
+    <span class="txt"><span class="label">Pay or book a deposit</span><span class="sub" id="sub-pay"></span></span>
+    <span class="chev"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
+  </a>
+</nav>
+
+<button class="save rise" id="save" type="button">
+  <svg viewBox="0 0 24 24"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>
+  Save my contact
+</button>
+
+<footer class="rise">
+  Tap to connect · Links stay current<br>
+  © <span id="yr"></span> BBC LLC
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- wire up links from CONFIG ----
+  function set(id, href, text){
+    var a = document.getElementById(id);
+    a.href = href;
+  }
+  set('lnk-ig',  CONFIG.instagram);
+  set('lnk-web', CONFIG.website);
+  set('lnk-pay', CONFIG.payment);
+  document.getElementById('sub-ig').textContent  = CONFIG.instagramText;
+  document.getElementById('sub-web').textContent = CONFIG.websiteText;
+  document.getElementById('sub-pay').textContent = CONFIG.paymentText;
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // ---- altitude rail: 0 to 400 ft, major tick every 100 ----
+  var rail = document.getElementById('rail');
+  var ticks = [];
+  for (var ft = 0; ft <= 400; ft += 20){
+    var t = document.createElement('div');
+    t.className = 'tick' + (ft % 100 === 0 ? ' major' : '');
+    rail.appendChild(t);
+    ticks.push(t);
+  }
+  ticks.reverse(); // rail reads top = 400 ft, bottom = ground
+
+  // ---- load sequence: climb to ceiling, ticks light bottom-up ----
+  var altEl = document.getElementById('alt');
+  var risers = document.querySelectorAll('.rise');
+
+  function pad(n){ return String(Math.round(n)).padStart(3,'0'); }
+
+  if (reduce){
+    altEl.textContent = '400';
+    ticks.forEach(function(t){ t.classList.add('lit'); });
+    risers.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    risers.forEach(function(el, i){
+      setTimeout(function(){ el.classList.add('in'); }, 90 + i * 85);
+    });
+
+    var start = null, dur = 1500;
+    function climb(ts){
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      altEl.textContent = pad(eased * 400);
+      var lit = Math.floor(eased * ticks.length);
+      for (var i = 0; i < ticks.length; i++){
+        ticks[ticks.length - 1 - i].classList.toggle('lit', i < lit);
+      }
+      if (p < 1) requestAnimationFrame(climb);
+    }
+    setTimeout(function(){ requestAnimationFrame(climb); }, 320);
+  }
+
+  // ---- save contact (.vcf) ----
+  document.getElementById('save').addEventListener('click', function(){
+    var v = [
+      'BEGIN:VCARD',
+      'VERSION:3.0',
+      'N:' + CONFIG.lastName + ';' + CONFIG.fullName + ';;;',
+      'FN:' + (CONFIG.fullName + ' ' + CONFIG.lastName).trim(),
+      'ORG:' + CONFIG.company,
+      'TITLE:' + CONFIG.jobTitle,
+      'TEL;TYPE=CELL,VOICE:' + CONFIG.phone,
+      'EMAIL;TYPE=INTERNET,WORK:' + CONFIG.email,
+      'ADR;TYPE=WORK:;;;' + CONFIG.city + ';' + CONFIG.state + ';;',
+      'URL:' + CONFIG.website,
+      'X-SOCIALPROFILE;TYPE=instagram:' + CONFIG.instagram,
+      'NOTE:Aerial photo and video — Charlotte NC',
+      'END:VCARD'
+    ].join('\r\n');
+
+    var blob = new Blob([v], {type:'text/vcard;charset=utf-8'});
+    var url  = URL.createObjectURL(blob);
+    var a    = document.createElement('a');
+    a.href = url;
+    a.download = (CONFIG.company || 'contact').replace(/\s+/g,'-') + '.vcf';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 4000);
+  });
+})();
+</script>
+</body>
+</html>
