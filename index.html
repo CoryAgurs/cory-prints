@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Cory Prints LLC — Aerial photo &amp; video, Charlotte NC</title>
+<title>Cory Prints LLC — Roofing, real estate &amp; event video | Charlotte NC</title>
 <meta name="description" content="Roofing and landscaping, real estate, indoor and outdoor events. Charlotte, NC. FAA Part 107 certified.">
 <meta name="theme-color" content="#0A1018">
 <meta property="og:title" content="Cory Prints LLC">
@@ -290,19 +290,19 @@ const CONFIG = {
 </header>
 
 <nav>
-  <a class="row rise" id="lnk-ig" href="#" target="_blank" rel="noopener">
+  <a class="row rise" id="lnk-ig" href="https://instagram.com/Bit.Bridge" target="_blank" rel="noopener">
     <span class="glyph"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></svg></span>
     <span class="txt"><span class="label">Instagram</span><span class="sub" id="sub-ig"></span></span>
     <span class="chev"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
   </a>
 
-  <a class="row rise" id="lnk-web" href="#" target="_blank" rel="noopener">
+  <a class="row rise" id="lnk-web" href="https://BitBridgeCLT.com" target="_blank" rel="noopener">
     <span class="glyph"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 3 2.6 15 0 18M12 3c-2.6 3-2.6 15 0 18"/></svg></span>
     <span class="txt"><span class="label">Website &amp; reel</span><span class="sub" id="sub-web"></span></span>
     <span class="chev"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
   </a>
 
-  <a class="row pay rise" id="lnk-pay" href="#" target="_blank" rel="noopener">
+  <a class="row pay rise" id="lnk-pay" href="https://buy.stripe.com/8x25kx3sBgujgC60A2cQU00" target="_blank" rel="noopener">
     <span class="glyph"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19"/></svg></span>
     <span class="txt"><span class="label">Pay or book a deposit</span><span class="sub" id="sub-pay"></span></span>
     <span class="chev"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
@@ -323,14 +323,7 @@ const CONFIG = {
 (function(){
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // ---- wire up links from CONFIG ----
-  function set(id, href, text){
-    var a = document.getElementById(id);
-    a.href = href;
-  }
-  set('lnk-ig',  CONFIG.instagram);
-  set('lnk-web', CONFIG.website);
-  set('lnk-pay', CONFIG.payment);
+  // ---- wire up subtitles from CONFIG ----
   document.getElementById('sub-ig').textContent  = CONFIG.instagramText;
   document.getElementById('sub-web').textContent = CONFIG.websiteText;
   document.getElementById('sub-pay').textContent = CONFIG.paymentText;
