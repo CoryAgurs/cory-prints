@@ -161,14 +161,21 @@ const CONFIG = {
   }
   h1 .thin{font-weight:500;color:var(--slate);display:block}
 
-  .altitude{
+  .services{
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    row-gap:6px;
     font-family:"IBM Plex Mono",monospace;
     font-size:11px;
     letter-spacing:.1em;
+    text-transform:uppercase;
     color:var(--amber);
     margin-top:20px;
   }
-  .altitude .cap{color:var(--slate)}
+  .services li{white-space:nowrap}
+  .services li:not(:last-child)::after{content:"|";color:var(--slate);margin:0 .7em}
+  .services .more{color:var(--slate)}
 
   .tagline{
     font-size:16.5px;
@@ -292,8 +299,10 @@ const CONFIG = {
 <header>
   <p class="eyebrow rise"><span class="strobe"></span>FAA Part 107 · Charlotte, NC</p>
   <h1 class="rise">Cory<span class="thin">Prints</span></h1>
-  <p class="altitude rise"><span id="alt">000</span> FT <span class="cap">/ CEILING 400</span></p>
-  <p class="tagline rise"><b>Roofing &amp; landscaping. Real estate. Indoor and outdoor events.</b> Shot, edited, delivered.</p>
+  <ul class="services rise" aria-label="Services">
+    <li>4K drone video</li><li>3D printing</li><li>Laser engraving</li><li>NFC tags</li><li>Stickers</li><li class="more">+ more</li>
+  </ul>
+  <p class="tagline rise"><b>Your local tech guy.</b></p>
 </header>
 
 <nav>
@@ -362,13 +371,9 @@ const CONFIG = {
   ticks.reverse(); // rail reads top = 400 ft, bottom = ground
 
   // ---- load sequence: climb to ceiling, ticks light bottom-up ----
-  var altEl = document.getElementById('alt');
   var risers = document.querySelectorAll('.rise');
 
-  function pad(n){ return String(Math.round(n)).padStart(3,'0'); }
-
   if (reduce){
-    altEl.textContent = '400';
     ticks.forEach(function(t){ t.classList.add('lit'); });
     risers.forEach(function(el){ el.classList.add('in'); });
   } else {
@@ -381,7 +386,6 @@ const CONFIG = {
       if (!start) start = ts;
       var p = Math.min((ts - start) / dur, 1);
       var eased = 1 - Math.pow(1 - p, 3);
-      altEl.textContent = pad(eased * 400);
       var lit = Math.floor(eased * ticks.length);
       for (var i = 0; i < ticks.length; i++){
         ticks[ticks.length - 1 - i].classList.toggle('lit', i < lit);
