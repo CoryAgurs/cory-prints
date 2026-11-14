@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Cory Prints LLC — Roofing, real estate &amp; event video | Charlotte NC</title>
+<title>Cory Prints — Roofing, real estate &amp; event video | Charlotte NC</title>
 <meta name="description" content="Roofing and landscaping, real estate, indoor and outdoor events. Charlotte, NC. FAA Part 107 certified.">
 <meta name="theme-color" content="#0A1018">
-<meta property="og:title" content="Cory Prints LLC">
+<meta property="og:title" content="Cory Prints">
 <meta property="og:description" content="Roofing and landscaping, real estate, indoor and outdoor events. Charlotte, NC.">
 <meta property="og:type" content="website">
 
@@ -25,15 +25,21 @@ const CONFIG = {
   website:       "https://BitBridgeCLT.com",
   websiteText:   "BitBridgeCLT.com",
 
+  googleReviews:     "https://www.google.com/maps/search/?api=1&query=Cory+Prints+Charlotte+NC",
+  googleReviewsText: "Read or leave a review",
+
+  yelp:          "https://www.yelp.com/biz/cory-prints-charlotte",
+  yelpText:      "Reviews on Yelp",
+
   payment:       "https://buy.stripe.com/8x25kx3sBgujgC60A2cQU00",
   paymentText:   "Card, Apple Pay, Cash App",
 
   // Used by the "Save my contact" button (creates a .vcf the phone can import)
   fullName:  "Cory",
   lastName:  "",
-  company:   "BBC LLC",
+  company:   "Cory Prints",
   jobTitle:  "Drone Pilot — FAA Part 107",
-  phone:     "+1-980-349-9410",
+  phone:     "+1-980-277-1970",
   email:     "Cory.Prints@gmail.com",
   city:      "Charlotte",
   state:     "NC"
@@ -203,6 +209,7 @@ const CONFIG = {
   .row .glyph svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 
   .row .txt{flex:1;min-width:0}
+  .row .label,.row .sub{display:block}
   .row .label{
     font-family:"Saira",sans-serif;
     font-weight:700;
@@ -302,6 +309,18 @@ const CONFIG = {
     <span class="chev"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
   </a>
 
+  <a class="row rise" id="lnk-google" href="https://www.google.com/maps/search/?api=1&amp;query=Cory+Prints+Charlotte+NC" target="_blank" rel="noopener">
+    <span class="glyph"><svg viewBox="0 0 24 24"><path d="M12 3.2l2.7 5.5 6 .9-4.35 4.25 1.03 6L12 17l-5.38 2.85 1.03-6L3.3 9.6l6-.9z"/></svg></span>
+    <span class="txt"><span class="label">Google reviews</span><span class="sub" id="sub-google"></span></span>
+    <span class="chev"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
+  </a>
+
+  <a class="row rise" id="lnk-yelp" href="https://www.yelp.com/biz/cory-prints-charlotte" target="_blank" rel="noopener">
+    <span class="glyph"><svg viewBox="0 0 24 24"><path d="M20 15.5a2 2 0 0 1-2 2H8.5L4 21V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z"/><path d="M12 7.6l1.1 2.2 2.4.35-1.75 1.7.42 2.4L12 13.1l-2.17 1.15.42-2.4-1.75-1.7 2.4-.35z"/></svg></span>
+    <span class="txt"><span class="label">Yelp reviews</span><span class="sub" id="sub-yelp"></span></span>
+    <span class="chev"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></span>
+  </a>
+
   <a class="row pay rise" id="lnk-pay" href="https://buy.stripe.com/8x25kx3sBgujgC60A2cQU00" target="_blank" rel="noopener">
     <span class="glyph"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19"/></svg></span>
     <span class="txt"><span class="label">Pay or book a deposit</span><span class="sub" id="sub-pay"></span></span>
@@ -316,7 +335,7 @@ const CONFIG = {
 
 <footer class="rise">
   Tap to connect · Links stay current<br>
-  © <span id="yr"></span> BBC LLC
+  © <span id="yr"></span> Cory Prints
 </footer>
 
 <script>
@@ -327,6 +346,8 @@ const CONFIG = {
   document.getElementById('sub-ig').textContent  = CONFIG.instagramText;
   document.getElementById('sub-web').textContent = CONFIG.websiteText;
   document.getElementById('sub-pay').textContent = CONFIG.paymentText;
+  document.getElementById('sub-google').textContent = CONFIG.googleReviewsText;
+  document.getElementById('sub-yelp').textContent   = CONFIG.yelpText;
   document.getElementById('yr').textContent = new Date().getFullYear();
 
   // ---- altitude rail: 0 to 400 ft, major tick every 100 ----
@@ -384,6 +405,7 @@ const CONFIG = {
       'ADR;TYPE=WORK:;;;' + CONFIG.city + ';' + CONFIG.state + ';;',
       'URL:' + CONFIG.website,
       'X-SOCIALPROFILE;TYPE=instagram:' + CONFIG.instagram,
+      'X-SOCIALPROFILE;TYPE=yelp:' + CONFIG.yelp,
       'NOTE:Aerial photo and video — Charlotte NC',
       'END:VCARD'
     ].join('\r\n');
