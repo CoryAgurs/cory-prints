@@ -19,6 +19,9 @@
      =================================================================== -->
 <script>
 const CONFIG = {
+  shop:          "https://v0wdk4-yk.myshopify.com",
+  shopText:      "Shop prints, engraving & more",
+
   instagram:     "https://instagram.com/Bit.Bridge",
   instagramText: "@Bit.Bridge",
 
@@ -186,8 +189,68 @@ const CONFIG = {
   }
   .tagline b{color:var(--ink);font-weight:600}
 
+  /* ---------- shop (Shopify) hero card ---------- */
+  .shop{
+    display:block;
+    margin-top:30px;
+    position:relative;
+    overflow:hidden;
+    padding:20px 22px 22px;
+    border-radius:18px;
+    background:linear-gradient(135deg,#5E8E3E 0%,#3D6B29 100%);
+    border:1px solid rgba(149,191,71,.6);
+    color:#fff;
+    text-decoration:none;
+    box-shadow:0 12px 34px -10px rgba(149,191,71,.55), inset 0 1px 0 rgba(255,255,255,.25);
+    transition:transform .16s ease, box-shadow .16s ease;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .shop:hover{box-shadow:0 16px 40px -10px rgba(149,191,71,.75), inset 0 1px 0 rgba(255,255,255,.25)}
+  .shop:active{transform:scale(.985)}
+  .shop:focus-visible{outline:2px solid #fff;outline-offset:3px}
+  .shop .badge{
+    display:inline-flex;align-items:center;gap:7px;
+    background:#fff;color:#5E8E3E;
+    border-radius:999px;
+    padding:6px 12px 6px 9px;
+    font-family:"Barlow",system-ui,sans-serif;
+    font-weight:600;font-size:14px;letter-spacing:-.01em;
+  }
+  .shop .badge svg{width:17px;height:17px;fill:#95BF47}
+  .shop .main{display:flex;align-items:center;gap:12px;margin-top:14px}
+  .shop .big{
+    flex:1;
+    font-family:"Saira",sans-serif;
+    font-weight:800;
+    font-size:clamp(30px,10vw,40px);
+    line-height:1;
+    letter-spacing:-.025em;
+    text-transform:uppercase;
+  }
+  .shop .arrow{
+    width:46px;height:46px;flex:none;
+    display:grid;place-items:center;
+    border-radius:50%;
+    background:rgba(255,255,255,.2);
+  }
+  .shop .arrow svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+  .shop .sub{
+    display:block;
+    margin-top:8px;
+    font-size:15px;
+    font-weight:500;
+    color:rgba(255,255,255,.92);
+  }
+  /* oversized bag watermark */
+  .shop .mark{
+    position:absolute;right:-18px;bottom:-26px;
+    width:130px;height:130px;
+    fill:rgba(149,191,71,.22);
+    pointer-events:none;
+  }
+
   /* ---------- links ---------- */
-  nav{margin-top:38px;display:flex;flex-direction:column;gap:10px}
+  nav{margin-top:14px;display:flex;flex-direction:column;gap:10px}
 
   .row{
     display:flex;
@@ -305,6 +368,16 @@ const CONFIG = {
   <p class="tagline rise"><b>Your local tech guy.</b> Best prices in the city, and we take pride in quality.</p>
 </header>
 
+<a class="shop rise" id="lnk-shop" href="https://v0wdk4-yk.myshopify.com" target="_blank" rel="noopener" aria-label="Tap in: shop the Cory Prints store on Shopify">
+  <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104h.023zM11.71 11.305s-.81-.424-1.774-.424c-1.447 0-1.504.906-1.504 1.141 0 1.232 3.24 1.715 3.24 4.629 0 2.295-1.44 3.76-3.406 3.76-2.354 0-3.54-1.465-3.54-1.465l.646-2.086s1.245 1.066 2.28 1.066c.675 0 .975-.545.975-.932 0-1.619-2.654-1.694-2.654-4.359-.034-2.237 1.571-4.416 4.827-4.416 1.257 0 1.875.361 1.875.361l-.945 2.715-.02.01zM11.17.83c.136 0 .271.038.405.135-.984.465-2.064 1.639-2.508 3.992-.656.213-1.293.405-1.889.578C7.697 3.75 8.951.84 11.17.84V.83zm1.235 2.949v.135c-.754.232-1.583.484-2.394.736.466-1.777 1.333-2.645 2.085-2.971.193.501.309 1.176.309 2.1zm.539-2.234c.694.074 1.141.867 1.429 1.755-.349.114-.735.231-1.158.366v-.252c0-.752-.096-1.371-.271-1.871v.002zm2.992 1.289c-.02 0-.06.021-.078.021s-.289.075-.714.21c-.423-1.233-1.176-2.37-2.508-2.37h-.115C12.135.209 11.669 0 11.265 0 8.159 0 6.675 3.877 6.21 5.846c-1.194.365-2.063.636-2.16.674-.675.213-.694.232-.772.87-.075.462-1.83 14.063-1.83 14.063L15.009 24l.927-21.166z"/></svg>
+  <span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104h.023zM11.71 11.305s-.81-.424-1.774-.424c-1.447 0-1.504.906-1.504 1.141 0 1.232 3.24 1.715 3.24 4.629 0 2.295-1.44 3.76-3.406 3.76-2.354 0-3.54-1.465-3.54-1.465l.646-2.086s1.245 1.066 2.28 1.066c.675 0 .975-.545.975-.932 0-1.619-2.654-1.694-2.654-4.359-.034-2.237 1.571-4.416 4.827-4.416 1.257 0 1.875.361 1.875.361l-.945 2.715-.02.01zM11.17.83c.136 0 .271.038.405.135-.984.465-2.064 1.639-2.508 3.992-.656.213-1.293.405-1.889.578C7.697 3.75 8.951.84 11.17.84V.83zm1.235 2.949v.135c-.754.232-1.583.484-2.394.736.466-1.777 1.333-2.645 2.085-2.971.193.501.309 1.176.309 2.1zm.539-2.234c.694.074 1.141.867 1.429 1.755-.349.114-.735.231-1.158.366v-.252c0-.752-.096-1.371-.271-1.871v.002zm2.992 1.289c-.02 0-.06.021-.078.021s-.289.075-.714.21c-.423-1.233-1.176-2.37-2.508-2.37h-.115C12.135.209 11.669 0 11.265 0 8.159 0 6.675 3.877 6.21 5.846c-1.194.365-2.063.636-2.16.674-.675.213-.694.232-.772.87-.075.462-1.83 14.063-1.83 14.063L15.009 24l.927-21.166z"/></svg>Shopify</span>
+  <span class="main">
+    <span class="big">Tap in</span>
+    <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </span>
+  <span class="sub" id="sub-shop">Shop prints, engraving &amp; more</span>
+</a>
+
 <nav>
   <a class="row rise" id="lnk-ig" href="https://instagram.com/Bit.Bridge" target="_blank" rel="noopener">
     <span class="glyph"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none"/></svg></span>
@@ -352,6 +425,8 @@ const CONFIG = {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ---- wire up subtitles from CONFIG ----
+  document.getElementById('sub-shop').textContent = CONFIG.shopText;
+  document.getElementById('lnk-shop').href = CONFIG.shop;
   document.getElementById('sub-ig').textContent  = CONFIG.instagramText;
   document.getElementById('sub-web').textContent = CONFIG.websiteText;
   document.getElementById('sub-pay').textContent = CONFIG.paymentText;
